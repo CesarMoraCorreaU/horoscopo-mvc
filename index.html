@@ -2,17 +2,33 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Consejo del Día</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título de la página visible en la pestaña del navegador -->
+    <title>Consulta de Horóscopo</title>
+    <!-- Enlace al archivo de estilos principal -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- AREA DE SOLO LECTURA -->
-    <div id="quote-container"></div>
+    <!-- Contenedor principal centrado con padding -->
+    <div class="container">
+      <h1>Consulta tu Horóscopo</h1>
+      <div class="form-group">
+        <label for="birthdate">Fecha de Nacimiento (DD-MM-AAAA):</label>
+        <!-- Input de texto para la fecha, con placeholder y longitud máxima -->
+        <input
+          type="text"
+          id="birthdate"
+          placeholder="Ej: 15-05-1990"
+          maxlength="10"
+        />
+      </div>
+      <!-- Botón que inicia deshabilitado hasta que la fecha sea válida -->
+      <button id="get-quote" disabled>Consultar</button>
+      <!-- Contenedor donde se mostrará el horóscopo o mensajes -->
+      <div id="quote-container" class="hidden"></div>
+    </div>
 
-    <!-- BOTÓN PARA OBTENER CONSEJO -->
-    <button id="get-quote">Consejo del día</button>
-
-    <!-- CONTROLADOR PRINCIPAL (ES6 MODULE) -->
-    <script type="module" src="controller.js" defer></script>
+    <!-- Script modular que maneja la lógica MVC -->
+    <script type="module" src="controller.js"></script>
   </body>
 </html>
